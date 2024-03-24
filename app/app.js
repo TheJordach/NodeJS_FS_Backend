@@ -1,5 +1,11 @@
 
 
+
+const express = require("express");
+const cors = require("cors");
+const userRouter = require("../Router/userRouter")
+const { connect} = require("../db/db") // import the db
+
 /**************************************************************************
  **  
      PART I - REQUEST LISTENER
@@ -10,9 +16,7 @@
  *   5.handle bad request and error
  **/
 
-    const express = require("express");
-    const cors = require("cors");
-    const userRouter = require("../Router/userRouter")
+    
 
     const app = express();
 
@@ -61,6 +65,15 @@
             }
         })
     })
+
+
+/***************************************************************************
+ **  
+     PART III - DB
+ *   
+ **/    
+
+    connect();
 
 
 module.exports = app
