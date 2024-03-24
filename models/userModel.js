@@ -1,49 +1,46 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
-    // id
-    // firstName, lastName, adress, city, state, zipCode, email, password
-    _id:mongoose.Schema.Types.ObjectId,
-    firstName : {
-        Types : String,
+    _id: mongoose.Schema.Types.ObjectId,
+    firstName: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
     },
 
-    lastName : {
-        Types : String,
+    lastName: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
     },
 
-    adress : {
-        Types : String,
+    address: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
     },
 
-    city : {
-        Types : String,
+    city: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
     },
     
-    state : {
-        Types : String,
+    state: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
     },
 
-    zipCode : {
-        Types : String,
+    zipCode: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
     },
 
-    email : {
-        Types : String,
+    email: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
     },
 
-    password : {
-        Types : String,
+    password: {
+        type: String,  // Corrected: lowercase 'type'
         required: true
-    },
-})
+    }
+});
 
-
-module.exports = mongoose.model("User", userSchema)
+module.exports = mongoose.model("User", userSchema);
