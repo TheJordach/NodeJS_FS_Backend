@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const userRouter = require('../Router/userRouter');
-const { connect } = require('../db/db'); // import the db
+const { connectTo} = require('../db/db'); // import the db
 
 const app = express();
 
@@ -37,6 +37,17 @@ app.use((error, request, response, next) => {
 });
 
 // Database Connection
-connect();
+connectTo()
+    .then(() => {
+        // For debugging
+        const connectionMessage = function () {
+            console.log('Connected to the database');
+        };
+        connectionMessage();
+    })
+    .catch((error) => {
+        console.error('Error connecting to the database:', error);
+        // Handle the error appropriately (e.g., exit the application, retry the connection, etc.)
+    });
 
 module.exports = app;

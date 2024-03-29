@@ -5,7 +5,8 @@
     "main": "server.js",
     "scripts": {
         "test": "jest --coverage",
-        "start": "nodemon server"
+        "start": "nodemon server",
+        "cleanCode": "npx prettier --write . "
     },
     "keywords": [
         "NodeJS",
@@ -15,6 +16,7 @@
     "author": "Jordach Makaya",
     "license": "MIT",
     "dependencies": {
+        "@jest/globals": "^29.7.0",
         "cors": "^2.8.5",
         "dotenv": "^16.4.5",
         "express": "^4.19.1",
