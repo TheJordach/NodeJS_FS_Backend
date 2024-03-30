@@ -12,8 +12,8 @@ const disconnectFrom = async () => {
 
 //Add two const one for finding a user and another for saving the user
 //obj is any json obj {firstName:request.body.firstName, email : request.body.email}
-const findUser = async (obj) => {
-    return await User.findOne(obj);
+const findUser = async (query) => {
+    return await query.findOne();
 };
 
 const saveUser = async (newUser) => {

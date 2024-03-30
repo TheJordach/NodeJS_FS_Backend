@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const userSchema = mongoose.Schema({
-    //MongoDB automatically handle unique ID creation
+    // MongoDB automatically handles unique ID creation
     firstName: {
         type: String, // Corrected: lowercase 'type'
         required: true,
