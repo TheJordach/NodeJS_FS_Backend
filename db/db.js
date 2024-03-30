@@ -7,11 +7,16 @@ const connectTo = async () => {
 };
 
 const disconnectFrom = async () => {
+    mongoose.set("strictQuery",true)
     await mongoose.connection.close();
 };
 
-//Add two const one for finding a user and another for saving the user
-//obj is any json obj {firstName:request.body.firstName, email : request.body.email}
+    /*  Add two const one for finding a user and another for saving the user
+    function usage
+        const obj = {email : "jordach@makaya.io"}
+        const query = modelUser.where(obj)
+        findUser(query)
+    **/
 const findUser = async (query) => {
     return await query.findOne();
 };
