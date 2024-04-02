@@ -38,7 +38,7 @@ exports.register=  async (request, response) => {
 
             // Save the user to the database
             const savedUser = await saveUser(newUser);
-            response.status(201).json({ message: "Successful registration. User:", newUser });
+            response.status(201).json({ message: "Successful registration", newUser });
         }
     } catch (error) {
         // this block catch all the error
